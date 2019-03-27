@@ -14,7 +14,6 @@ docker pull iwaseyusuke/mininet
 
 ```bash
 docker run -it --rm --privileged -e DISPLAY \
-             -v /tmp/.X11-unix:/tmp/.X11-unix \
              -v /lib/modules:/lib/modules \
              iwaseyusuke/mininet
 ```
@@ -32,6 +31,8 @@ docker-compose run --rm mininet
 ## TIPS
 
 ### Open X Window applications in containers
+
+> this feature doesn't work in remote servers as a result I removed it.
 
 If you could not open `xterm` or other X Window applications, or faced to the
 following error message;
