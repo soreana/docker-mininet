@@ -5,10 +5,7 @@ services:
       context: .
     image: mininet
     tty: true
-    network_mode: "bridge"
     privileged: true
-    environment:
-     - DISPLAY
+    network_mode: "host"
     volumes:
-#     - /tmp/.X11-unix:/tmp/.X11-unix
      - /lib/modules:/lib/modules
