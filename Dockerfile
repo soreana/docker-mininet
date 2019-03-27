@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:9.8-slim
 
 USER root
 WORKDIR /root
@@ -6,19 +6,18 @@ WORKDIR /root
 COPY ENTRYPOINT.sh /
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
+    #curl \
     iproute2 \
     iputils-ping \
     mininet \
     net-tools \
     openvswitch-switch \
     openvswitch-testcontroller \
-    tcpdump \
-    vim \
-    x11-xserver-utils \
-    xterm \
+    #x11-xserver-utils \
+    #xterm \
  && rm -rf /var/lib/apt/lists/* \
- && chmod +x /ENTRYPOINT.sh
+ && chmod +x /ENTRYPOINT.sh \
+ && ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 EXPOSE 6633 6653 6640
 
