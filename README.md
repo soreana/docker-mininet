@@ -30,7 +30,7 @@ docker-compose run --rm mininet
 
 ## TIPS
 
-### Open X Window applications in containers
+### Open X Window applications in containers (can't work if you are running containers on OS without UI)
 
 > this feature doesn't work in remote servers as a result I removed it.
 
